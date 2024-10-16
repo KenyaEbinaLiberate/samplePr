@@ -1,16 +1,16 @@
 ---
 import type { GetStaticPaths, Page } from "astro";
-import type { Magazine } from "src/types/microcms/magazine";
+import type { Event } from "src/types/microcms/event";
 
 import UnderPageLayout from "@layouts/UnderPageLayout.astro";
 import { client } from "@libs/microcms";
 import { Picture } from "@astrojs/image/components";
 import FormattedDate from "@components/FormattedDate.svelte";
-import Pagination from "@components/Pagination/MagazinePagination.astro";
+import Pagination from "@components/Pagination/EventPagination.astro";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-  const { totalCount } = await client.getList<Magazine>({
-    endpoint: "magazine",
+  const { totalCount } = await client.getList<Event>({
+    endpoint: "event",
     queries: { limit: 0 },
   });
 
@@ -24,8 +24,8 @@ export interface Props {
 }
 const { page } = Astro.props;
 
-const { contents: magazine } = await client.getList<Magazine>({
-  endpoint: "magazine",
+const { contents: event } = await client.getList<Event>({
+  endpoint: "event",
   queries: {
     limit: 5,
     offset: page.start,
@@ -35,17 +35,17 @@ const { contents: magazine } = await client.getList<Magazine>({
 ---
 
 <UnderPageLayout
-  mainLabel="MAGAZINE"
+  mainLabel="EVENT"
   subLabel="マガジン"
   title="マガジン"
   noindex={page.currentPage !== 1}
 >
   <ul class="postList">
     {
-      magazine.map(
+      event.map(
         ({ id, title, thumbnail, category, createdAt, publishedAt }) => (
           <li>
-            <a href={`/magazine/${id}`} class="flex">
+            <a href={`/event/${id}`} class="flex">
               <div class="thumb">
                 <Picture
                   src={thumbnail.url}

@@ -1,0 +1,20 @@
+@import "_reset.scss";
+@import "_snipet.scss";
+@import "_keyframe.scss";
+@import "_parts.scss";
+@import "_siteCommon.scss";
+* {
+  font-family: ivyora-display, "Noto Serif JP", sans-serif;
+  font-weight: 400;
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+img {
+  width: 100%;
+}
+.headArea {
+  display: none;
+}

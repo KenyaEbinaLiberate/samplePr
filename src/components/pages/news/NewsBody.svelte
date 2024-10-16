@@ -7,17 +7,14 @@
   export let content: News;
 </script>
 
-<div class="mx-auto max-w-prose">
-  <h1 class="text-[1.75rem] font-bold leading-normal">
+<div class="">
+  <h1 class="">
     {content.title}
   </h1>
 
-  <FormattedDate
-    date={content.publishedAt ?? content.createdAt}
-    class="mt-4 text-sm font-bold"
-  />
+  <FormattedDate date={content.publishedAt ?? content.createdAt} class="" />
 
-  <div class="mx-auto mt-14 max-w-xs lg:max-w-md">
+  <div class="">
     <MicroCMSPicture
       src={content.thumbnail.url}
       widths={[320, 640, 960]}
@@ -28,13 +25,11 @@
     />
   </div>
 
-  <div
-    class="prose mx-auto mt-20 max-w-[50ch] prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg sm:px-16 [&_*]:text-main"
-  >
+  <div class="">
     {@html content.body}
   </div>
 
-  <div class="mt-20 flex justify-center">
+  <div class="">
     <InternalAnchor href="/news/1" direction="left">BACK</InternalAnchor>
   </div>
 </div>

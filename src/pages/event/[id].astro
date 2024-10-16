@@ -1,31 +1,31 @@
 ---
-import type { Magazine } from "src/types/microcms/magazine";
-
+import type { Event } from "src/types/microcms/event";
+import "../../../public/assets/css/article.scss";
 import UnderPageLayout from "@layouts/UnderPageLayout.astro";
 import { client } from "@libs/microcms";
 import NewsBody from "@components/pages/news/NewsBody.svelte";
 import { processContent } from "src/utils/processContent";
 
 export const getStaticPaths = async () => {
-  const { contents: magazine } = await client.getList<Magazine>({
-    endpoint: "magazine",
+  const { contents: event } = await client.getList<Event>({
+    endpoint: "event",
     queries: { limit: 10, fields: "id" },
   });
 
-  return magazine.map((magazine) => ({ params: { id: magazine.id } }));
+  return event.map((event) => ({ params: { id: event.id } }));
 };
 
 const { id } = Astro.params;
 if (!id) throw new Error("id is required");
 
-const content = await client.getListDetail<Magazine>({
-  endpoint: "magazine",
+const content = await client.getListDetail<Event>({
+  endpoint: "event",
   contentId: id,
 });
 
 content.body = processContent(content.body);
 ---
 
-<UnderPageLayout mainLabel="Magazine" subLabel="マガジン" title="マガジン">
+<UnderPageLayout mainLabel="Event" subLabel="イベント情報" title="イベント情報">
   <NewsBody content={content} />
 </UnderPageLayout>
