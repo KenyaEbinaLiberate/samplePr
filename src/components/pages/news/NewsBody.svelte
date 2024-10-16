@@ -7,14 +7,17 @@
   export let content: News;
 </script>
 
-<div class="">
+<div class="articleWrap">
   <h1 class="">
     {content.title}
   </h1>
 
-  <FormattedDate date={content.publishedAt ?? content.createdAt} class="" />
+  <FormattedDate
+    date={content.publishedAt ?? content.createdAt}
+    class="postDate"
+  />
 
-  <div class="">
+  <div class="articleThumb">
     <MicroCMSPicture
       src={content.thumbnail.url}
       widths={[320, 640, 960]}
@@ -25,11 +28,11 @@
     />
   </div>
 
-  <div class="">
+  <div class="articleBody">
     {@html content.body}
   </div>
 
-  <div class="">
+  <div class="backBtn">
     <InternalAnchor href="/news/1" direction="left">BACK</InternalAnchor>
   </div>
 </div>

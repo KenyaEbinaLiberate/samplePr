@@ -18,3 +18,61 @@ img {
 .headArea {
   display: none;
 }
+
+.articleWrap {
+  max-width: 660px;
+  width: calc(100% - 60px);
+  margin: 120px auto;
+  h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .postDate {
+    font-size: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+  .articleThumb {
+    margin-bottom: 24px;
+  }
+  .articleBody {
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    h3 {
+      font-size: 28px;
+      position: relative;
+      padding-top: 48px;
+      margin-top: 48px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+    figure {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 32px;
+    }
+  }
+  .backBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+  }
+}
