@@ -1,0 +1,131 @@
+@import "_reset.scss";
+@import "_snipet.scss";
+@import "_keyframe.scss";
+@import "_parts.scss";
+@import "_siteCommon.scss";
+* {
+  font-family: ivyora-display, "Noto Serif JP", sans-serif;
+  font-weight: 400;
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+img {
+  width: 100%;
+}
+.headArea {
+  max-width: 1000px;
+  width: calc(100% - 60px);
+  margin: 120px auto 60px;
+  position: relative;
+  padding-bottom: 24px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  h1 {
+    span {
+      line-height: 110%;
+      display: inline-block;
+      &.en {
+        font-size: 80px;
+        margin-bottom: 16px;
+      }
+      &.jp {
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+.bodyArea {
+  max-width: 1000px;
+  width: calc(100% - 60px);
+  position: relative;
+
+  margin: auto;
+  .postList {
+    width: 100%;
+    margin-left: auto;
+    display: flex;
+    flex-flow: column;
+    gap: 96px;
+    li {
+      position: relative;
+      &:nth-of-type(1) {
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -48px;
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+      a {
+        display: flex;
+        flex-flow: row;
+        gap: 24px;
+        .thumb {
+          width: 25%;
+        }
+        .textBox {
+          .category {
+            font-size: 14px;
+            background: #444;
+            color: #fff;
+            display: inline-block;
+            padding: 2px 12px 4px;
+            margin-bottom: 16px;
+          }
+          .title {
+            font-size: 24px;
+            margin-bottom: 24px;
+          }
+          .date {
+            opacity: 0.6;
+            font-size: 11px;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pageNav {
+  margin-top: 120px;
+  padding-bottom: 120px;
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    .nextArrow {
+    }
+    a {
+      &.navNumber {
+        font-size: 16px;
+        &.isCurrent {
+          padding: 4px 8px;
+          background: rgba(0, 0, 0, 0.2);
+          color: rgba(0, 0, 0, 0.6);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

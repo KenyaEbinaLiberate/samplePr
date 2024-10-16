@@ -31,20 +31,17 @@ if (pages.length > 6) {
 <nav
   {...props}
   aria-label="ページナビゲーション"
-  class:list={["flex justify-center", className]}
+  class:list={["pageNav", className]}
 >
-  <ul class="flex items-center gap-1">
+  <ul class="">
     {
       !!page.url.prev && (
         <li>
-          <a
-            href={page.url.prev}
-            class="flex h-10 w-10 items-center justify-center rounded text-gray-500 transition-colors duration-300 sm:hover:bg-gray-100 sm:hover:text-gray-700"
-          >
-            <span class="sr-only">前のページ</span>
+          <a href={page.url.prev} class="">
+            <span class="">前のページ</span>
             <svg
               aria-hidden="true"
-              class="h-5 w-5"
+              class=""
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

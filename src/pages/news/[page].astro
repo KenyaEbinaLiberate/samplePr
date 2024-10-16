@@ -40,7 +40,7 @@ const { contents: news } = await client.getList<News>({
   title="お知らせ"
   noindex={page.currentPage !== 1}
 >
-  <ul class="">
+  <ul class="postList">
     {
       news.map(({ id, title, thumbnail, createdAt, publishedAt }) => (
         <li>

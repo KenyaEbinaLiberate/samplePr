@@ -40,13 +40,13 @@ const { contents: magazine } = await client.getList<Magazine>({
   title="マガジン"
   noindex={page.currentPage !== 1}
 >
-  <ul class="">
+  <ul class="postList">
     {
       magazine.map(
         ({ id, title, thumbnail, category, createdAt, publishedAt }) => (
           <li>
             <a href={`/magazine/${id}`} class="flex">
-              <div class="">
+              <div class="thumb">
                 <Picture
                   src={thumbnail.url}
                   widths={[320, 640, 960]}
@@ -57,10 +57,11 @@ const { contents: magazine } = await client.getList<Magazine>({
                   alt=""
                 />
               </div>
-              <div class="">
-                <h2 class="">{title}</h2>
-                <h2 class="">{category}</h2>
-                <FormattedDate class="" date={publishedAt ?? createdAt} />
+              <div class="textBox">
+                <p class="category">{category}</p>
+                <h2 class="title">{title}</h2>
+
+                <FormattedDate class="date" date={publishedAt ?? createdAt} />
               </div>
             </a>
           </li>

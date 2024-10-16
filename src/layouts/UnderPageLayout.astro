@@ -1,6 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
-
+import "../../public/assets/css/underPage.scss";
 import Layout from "./Layout.astro";
 
 export interface Props {
@@ -16,15 +16,13 @@ const { mainLabel, subLabel, ...props } = Astro.props;
 ---
 
 <Layout {...props}>
-  <div class="">
-    <div class="">
-      <h1 class="">
-        <span class="">{mainLabel}</span>
-        <span class="">{subLabel}</span>
-      </h1>
-    </div>
+  <div class="headArea">
+    <h1 class="">
+      <span class="en">{mainLabel}</span><br />
+      <span class="jp">{subLabel}</span>
+    </h1>
   </div>
-  <div class="">
+  <div class="bodyArea">
     <slot />
   </div>
 </Layout>
