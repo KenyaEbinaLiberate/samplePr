@@ -16,27 +16,11 @@ const { mainLabel, subLabel, ...props } = Astro.props;
 ---
 
 <Layout {...props}>
-  <div class="relative h-80">
-    <Picture
-      src={import(`../images/${mainLabel.toLowerCase()}.png`)}
-      widths={[400, 800, 1200, 1600, 2000]}
-      sizes="100vw"
-      loading="eager"
-      width={1440}
-      height={320}
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover object-center"
-    />
-    <div
-      class="relative flex h-full w-full items-center justify-center bg-black/20"
-    >
-      <h1 class="flex flex-col justify-center text-center text-white">
-        <span class="font-english text-[2rem] font-medium text-white"
-          >{mainLabel}</span
-        >
-        <span class="font-sans text-base font-medium text-white"
-          >{subLabel}</span
-        >
+  <div class="">
+    <div class="">
+      <h1 class="">
+        <span class="">{mainLabel}</span>
+        <span class="">{subLabel}</span>
       </h1>
     </div>
   </div>

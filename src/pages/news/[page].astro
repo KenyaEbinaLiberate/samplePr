@@ -40,12 +40,12 @@ const { contents: news } = await client.getList<News>({
   title="お知らせ"
   noindex={page.currentPage !== 1}
 >
-  <ul class="mx-auto grid max-w-2xl grid-cols-1 gap-5 sm:gap-8 lg:gap-16">
+  <ul class="">
     {
       news.map(({ id, title, thumbnail, createdAt, publishedAt }) => (
         <li>
           <a href={`/news/${id}`} class="flex">
-            <div class="mr-4 w-1/3 max-w-[10rem] flex-none sm:mr-8 lg:mr-12">
+            <div class="">
               <Picture
                 src={thumbnail.url}
                 widths={[320, 640, 960]}
@@ -56,14 +56,9 @@ const { contents: news } = await client.getList<News>({
                 alt=""
               />
             </div>
-            <div class="sm:justify flex flex-1 flex-col justify-between sm:justify-center sm:gap-6">
-              <h2 class="line-clamp-3 text-sm leading-relaxed sm:text-lg">
-                {title}
-              </h2>
-              <FormattedDate
-                class="font-english text-xs sm:text-sm"
-                date={publishedAt ?? createdAt}
-              />
+            <div class="">
+              <h2 class="">{title}</h2>
+              <FormattedDate class="" date={publishedAt ?? createdAt} />
             </div>
           </a>
         </li>
@@ -71,5 +66,5 @@ const { contents: news } = await client.getList<News>({
     }
   </ul>
 
-  <Pagination class="mt-16 sm:mt-24 lg:mt-32" page={page} />
+  <Pagination class="" page={page} />
 </UnderPageLayout>
