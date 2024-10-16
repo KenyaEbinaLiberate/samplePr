@@ -6,7 +6,7 @@ import UnderPageLayout from "@layouts/UnderPageLayout.astro";
 import { client } from "@libs/microcms";
 import { Picture } from "@astrojs/image/components";
 import FormattedDate from "@components/FormattedDate.svelte";
-import Pagination from "@components/Pagination/Pagination.astro";
+import Pagination from "@components/Pagination/NewsPagination.astro";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const { totalCount } = await client.getList<News>({
