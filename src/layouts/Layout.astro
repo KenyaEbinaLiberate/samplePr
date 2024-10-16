@@ -4,7 +4,6 @@ import "@styles/global.css";
 
 import { SEO } from "astro-seo";
 
-import Menu from "@components/Menu/Menu.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import GA4 from "@components/GA4.astro";
@@ -58,14 +57,12 @@ const description = props.description ?? BASE_DESCRIPTION;
 
     {import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID && <GA4 />}
   </head>
-  <body class="font-serif leading-loose text-main">
+  <body>
     <Header />
-    <main class="mt-32 overflow-x-hidden sm:mt-40">
+    <main>
       <slot />
     </main>
     <Footer />
-
-    <Menu />
 
     <script>
       import "@global/smallDevice";
