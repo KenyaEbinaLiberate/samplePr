@@ -46,6 +46,7 @@
     "prettier-plugin-astro": "0.8.1",
     "prettier-plugin-svelte": "2.10.0",
     "prettier-plugin-tailwindcss": "0.2.7",
+    "sass": "1.79.5",
     "svelte-eslint-parser": "0.28.0",
     "typescript": "5.0.4"
   }

@@ -16,7 +16,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 
   return paginate(
     Array.from({ length: totalCount }).map(() => ({})),
-    { pageSize: 10 }
+    { pageSize: 2 }
   );
 };
 export interface Props {
@@ -27,7 +27,7 @@ const { page } = Astro.props;
 const { contents: news } = await client.getList<News>({
   endpoint: "news",
   queries: {
-    limit: 10,
+    limit: 2,
     offset: page.start,
     fields: "id,title,thumbnail,createdAt,publishedAt",
   },

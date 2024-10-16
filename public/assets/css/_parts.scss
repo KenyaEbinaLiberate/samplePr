@@ -1,0 +1,138 @@
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  background: linear-gradient(0deg, #dd3c14 0%, #ffa108 100%);
+  filter: brightness(2);
+  transition: 1.5s ease-in-out 0s;
+  .noise {
+    position: fixed;
+    z-index: 3;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    width: 100%;
+    height: 100%;
+  }
+  .filterLayer {
+    position: fixed;
+    z-index: 3;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .symbol {
+    position: fixed;
+    z-index: 3;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(30) blur(1vw);
+    transition: 0.8s ease-in 0s;
+    .symobolImg01 {
+      clip-path: inset(0 100% 0 0);
+      transition: 0.8s ease-in 0s;
+    }
+    .symobolImg02 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      transition: 0.8s ease-in 0s;
+      clip-path: inset(0 0 0 100%);
+    }
+  }
+}
+.splashCopy {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24%;
+  z-index: 10;
+  transition: 0.95s ease-in-out 0s;
+  clip-path: inset(0 100% 0 100%);
+}
+html {
+  &.is-splash01 {
+    .bg {
+      filter: brightness(1);
+    }
+    .splashCopy {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  &.is-splash02 {
+    .bg {
+      .symbol {
+        transition: 2s ease-in-out 0s;
+        .symobolImg01 {
+          clip-path: inset(0 0 0 0);
+        }
+        .symobolImg02 {
+          clip-path: inset(0 0 0 0);
+        }
+      }
+    }
+  }
+  &.is-splash03 {
+    .bg {
+      .symbol {
+        width: 130%;
+        top: 180%;
+        filter: brightness(30) blur(8vw);
+
+        .symobolImg01 {
+          clip-path: inset(0 0 0 0);
+        }
+        .symobolImg02 {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &.is-splash04 {
+    .splashCopy {
+      clip-path: inset(0 100% 0 100%);
+    }
+  }
+  &.is-splash05 {
+    header {
+      opacity: 1;
+      top: 30px;
+    }
+    .gNav {
+      opacity: 1;
+      top: 30px;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  width: 95vw;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  top: 10px;
+  transition: 0.3s ease-in-out 0s;
+  figure {
+    width: 100%;
+  }
+}
+
+.gNav {
+  opacity: 0;
+  width: 28%;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  top: 10px;
+  transition: 0.3s ease-in-out 0s;
+}

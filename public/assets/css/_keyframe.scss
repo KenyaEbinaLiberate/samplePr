@@ -1,0 +1,9 @@
+@keyframes fuwafuwa-1 {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    transform: translateY(-12px) scaleX(1.001);
+  }
+}

@@ -1,0 +1,156 @@
+/*数値の設定
+------------------------------------------*/
+
+//Media queries
+$pc-wqhd: 2560px;
+$pc-fullhd: 1920px;
+$pc-mac: 1580px;
+$pc-laptop: 1440px;
+$pc-hd: 1280px;
+$pc1200: 1200px;
+$pc: 1024px;
+$tab: 991px;
+$smp: 767px;
+$smp-xs: 320px;
+//color
+
+//weight
+$font-l: 300;
+$font-r: 400;
+$font-m: 500;
+$font-b: 700;
+//transition
+$transition: all 0.3s;
+//wrap width
+$wrap-full: 100%;
+$wrap-pc: 1440px;
+$wrap-laptop: 92%;
+$wrap-smp: 88%;
+//column
+$column1: calc(100% - 30px);
+$column2: calc(50% - 30px);
+$column3: calc(33.3333% - 30px);
+$column4: calc(25% - 30px);
+$column5: calc(20% - 30px);
+
+/*上記数値の設定を呼び出しているmixin
+------------------------------------------*/
+
+//Media queries
+@mixin wqhd {
+  @media only screen and (min-width: ($pc-fullhd + 1)) {
+    @content;
+  }
+}
+
+@mixin fullhd {
+  @media only screen and (max-width: ($pc-fullhd)) {
+    @content;
+  }
+}
+
+@mixin pc-mac {
+  @media only screen and (max-width: ($pc-mac)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media only screen and (max-width: ($pc-laptop)) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media only screen and (max-width: ($pc-hd)) {
+    @content;
+  }
+}
+
+@mixin pc1200 {
+  @media only screen and (max-width: ($pc1200)) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media only screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin pc_hover {
+  @media only screen and (min-width: ($pc + 1)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media only screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin smp {
+  @media only screen and (max-width: ($smp)) {
+    @content;
+  }
+}
+
+@mixin smp_xs {
+  @media only screen and (max-width: ($smp-xs)) {
+    @content;
+  }
+}
+/* visible or hidden
+--------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 991px) {
+  .visible-pc {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .visible-pctb {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .visible-tbsp {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .visible-sp {
+    display: none !important;
+  }
+}
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-tab {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .hidden-tab {
+    display: none !important;
+  }
+  .visible-tab {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xs {
+    display: block !important;
+  }
+}
